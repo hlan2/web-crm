@@ -23,4 +23,7 @@ end
 post '/contacts' do
 	 new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
   $rolodex.add_contact(new_contact)
+  redirect to('/contacts') # we do a redirect to keep the user's browser state consistent with what they are seeing
 end
+
+#
